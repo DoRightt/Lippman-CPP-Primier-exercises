@@ -7,11 +7,22 @@ int main() {
 
     std::cout << "Start input transactions: " << std::endl;
 
-    while (std::cin >> item) {
+    if (std::cin >> item) {
+        std::string curIsbn = item.isbn();
         sum += item;
-    }
 
-    std::cout << "Total sum is equal: "<< sum << std::endl;
+        while (std::cin >> item) {
+            if (item.isbn() == curIsbn) {
+                sum += item;
+            } else {
+                std::cout << "ISBN should be equal" << std::endl;
+                return 1;
+            }
+        }
+
+        std::cout << "Total sum is equal: "<< sum << std::endl;
+    }
 
     return 0;
 }
+

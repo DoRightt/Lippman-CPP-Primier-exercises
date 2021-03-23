@@ -7,8 +7,12 @@ int main() {
     Sales_item sum;
 
     std::cin >> itemA >> itemB;
-    sum = itemA + itemB;
-    std::cout << sum << std::endl;
+    if (itemA.isbn() == itemB.isbn()) {
+        sum = itemA + itemB;
+        std::cout << "Sum is equal: " << sum << std::endl;
+    } else {
+        std::cout << "ISBN should be same" << std::endl;
+    }
 
     return 0;
 }

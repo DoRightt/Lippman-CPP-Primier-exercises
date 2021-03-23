@@ -16,7 +16,7 @@ int main() {
                 sum += item;
             } else {
                 std::cout << "ISBN should be equal" << std::endl;
-                return 1;
+                return -1;
             }
         }
 

@@ -16,14 +16,7 @@ private:
     string bookNo;
     unsigned units_sold = 0;
     double revenue = 0.0;
-
-    double avg_price() const {
-        if (units_sold) {
-            return revenue / units_sold;
-        } else {
-            return 0;
-        }
-    };
+    double avg_price() const;
 
 public:
     Sales_data(): bookNo(""), units_sold(0), revenue(0) {};
@@ -67,6 +60,15 @@ Sales_data add(const Sales_data& lhs, const Sales_data& rhs) {
     sum.combine(rhs);
 
     return sum;
+}
+
+inline
+double Sales_data::avg_price() const {
+    if (units_sold) {
+        return revenue / units_sold;
+    } else {
+        return 0;
+    }
 }
 
 #endif //SALES_DATA_H

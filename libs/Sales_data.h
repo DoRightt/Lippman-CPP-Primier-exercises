@@ -5,6 +5,8 @@
 using std::string;
 using std::istream;
 using std::ostream;
+using std::cout;
+using std::endl;
 
 struct Sales_data;
 istream& read(istream &is, Sales_data &item);
@@ -19,10 +21,15 @@ private:
     double avg_price() const;
 
 public:
-    Sales_data(): bookNo(""), units_sold(0), revenue(0) {};
-    Sales_data(const string &s): bookNo(s) {};
     Sales_data(const string &s, unsigned n, double p): bookNo(s), units_sold(n), revenue(p*n) {};
-    Sales_data(istream &is) {
+    Sales_data(): Sales_data("", 0, 0.0) {
+        cout << "Sales_data()" << endl;
+    };
+    Sales_data(const string &s): Sales_data(s, 0, 0.0) {
+        cout << "Sales_data(string&)" << endl;
+    };
+    Sales_data(istream &is): Sales_data() {
+        cout << "Sales_data(istream&)" << endl;
         read(is, *this);
     };
 

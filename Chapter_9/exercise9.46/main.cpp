@@ -13,6 +13,7 @@ void f(string &s, const string prefix, const string suffix) {
     s.insert(s.size(), " " + suffix);
 }
 
+
 int main() {
     string s = "John Smith";
 

@@ -26,7 +26,6 @@ string f(string s) {
     }
 
     return s.substr(bg, ed - bg + 1);
-
 }
 
 int main() {

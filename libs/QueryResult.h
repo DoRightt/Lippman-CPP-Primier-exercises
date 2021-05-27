@@ -1,0 +1,10 @@
+#ifndef UNTITLED1_QUERYRESULT_H
+#define UNTITLED1_QUERYRESULT_H
+
+
+class QueryResult {
+
+};
+
+
+#endif //UNTITLED1_QUERYRESULT_H

@@ -7,18 +7,21 @@
 
 using std::string;
 using std::cout;
+using std::cin;
 using std::endl;
 using std::vector;
 using std::ifstream;
 
-void runQueries(std::ifstream &infile) {
+void runQueries(ifstream &infile) {
     TextQuery tq(infile);
     while (true) {
-        std::cout << "Enter word to look for, or 'q' to exit: ";
-        std::string s;
-        if (!(std::cin >> s) || s == "q")
+        cout << "Enter word to look for, or 'q' to exit: ";
+        string s;
+        if (!(cin >> s) || s == "q") {
             break;
-        print(std::cout, tq.query(s)) << std::endl;
+        }
+
+        print(cout, tq.query(s)) << endl;
     }
 }
 
